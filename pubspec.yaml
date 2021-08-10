@@ -9,6 +9,10 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+
+  core:
+    git: git@github.com:bakecode-devs/core.git
+
   recipe:
     git: git@github.com:bakecode-devs/recipe.git
 
