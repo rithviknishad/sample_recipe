@@ -1,0 +1,45 @@
+name: sample_recipe
+description: A simple command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+publish_to: none
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  recipe:
+    git: git@github.com:bakecode-devs/recipe.git
+
+# All bakecode related props goes inside this map.
+bakecode:
+  # Every bakecode entities (in this case, a recipe) shall implement the `uuid` property.
+  uuid: 85824190-dc07-4423-bf08-65f26dc194e2
+  
+  
+  # Denotes that this dart project is a recipe
+  # Every recipe's must implement this key.
+  recipe:
+    # All the properties that can be tweaked before running this recipe and it's description.
+    # A good recipe shall have judicious amounts of tweakable properties.
+    props:
+      - Quantity:
+          description: The servable amount in millilitres.
+          defaults to: 200
+      
+      - Sweetness:
+          description: How sweet should this recipe be.
+          possible values:
+            - Low
+            - Medium
+            - High
+          defaults to: Low
+
+    # All the requirements that is expected by this recipe to succesfully complete.
+    requires:
+      - sample_recipe by rithviknishad
+
+    # Optional property
+    authors:
+      - Rithvik 
